@@ -60,7 +60,7 @@ function init(){
     cameraBasePos.copy(camera.position);
 
     renderer = new THREE.WebGLRenderer();
-    renderer.setPixelRation(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRation(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     
     document.getElementById('scene-container').appendChild(renderer.domElement);
