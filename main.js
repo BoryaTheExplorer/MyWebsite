@@ -61,6 +61,7 @@ function init(){
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRation(Math.min(window.devicePixelRatio, 2));
     document.getElementById('scene-container').appendChild(renderer.domElement);
 
     grid.build(loader, scene);
@@ -194,6 +195,7 @@ function animate(){
   scene.children[0].rotation.x += 0.01;
   scene.children[0].rotation.y += 0.01;
 
+  
   renderer.render(scene, camera);
 }
 
