@@ -16,7 +16,7 @@ html {
 /* Card Styling */
 #ui-card {
     position: absolute; /* Place card on top of 3D scene */
-    bottom: 5%;
+    bottom: 0%;
     left: 5%;
     width: 35%;
     height: 70%;
@@ -129,7 +129,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 200%;
+  width: 180%;
   height: 2px; /* Thickness of the line */
   background-color: aliceblue; /* Color of the line *//
 }
@@ -157,7 +157,7 @@ html {
     font-size: 0.75vw; 
     color: aliceblue; 
     padding-left: 1vw;
-    width: 210%;
+    width: 185%;
 
     position: relative;
 }
@@ -198,7 +198,6 @@ html {
   bottom: 0; /* Align the line to the bottom */
   height: 2px; /* Thickness of the line */
   background-color: aliceblue; /* Color of the line */
-  transform: scaleX(1); /* Default state, line is full width */
   transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 #ui-card button:hover::after{
