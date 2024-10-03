@@ -16,7 +16,7 @@ html {
 /* Card Styling */
 #ui-card {
     position: absolute; /* Place card on top of 3D scene */
-    bottom: 0%;
+    bottom: 3%;
     left: 5%;
     width: 35%;
     height: 70%;
