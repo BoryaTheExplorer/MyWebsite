@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import Hex from './Hex.js';
 import Grid from './Grid.js';
 import CameraModule from './TODO/CameraModule.js';
-import Skills from './Activities/Skills.js';
+import TestFrameworks from './Activities/TestFrameworks.js';
 import Experience from './Activities/Experience.js';
 import AboutMe from './Activities/AboutMe.js';
 
@@ -82,7 +82,7 @@ function init(){
 
 function setActivities(){
   grid.getTileFromIndex(3, 3).activity = new AboutMe(loader, scene, grid.getTileFromIndex(3, 3));
-  grid.getTileFromIndex(2, 5).activity = new Skills(loader, scene, grid.getTileFromIndex(2, 5));
+  grid.getTileFromIndex(2, 5).activity = new TestFrameworks(loader, scene, grid.getTileFromIndex(2, 5));
   grid.getTileFromIndex(4, 5).activity = new Experience(loader, scene, grid.getTileFromIndex(4, 5));
 }
 function onMouseMove(event){
