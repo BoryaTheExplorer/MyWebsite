@@ -80,6 +80,10 @@ class Grid{
             const model = gltf.scene;
             model.traverse((child) => {
                 if(child.isMesh){
+                    child.material = new THREE.MeshStandardMaterial({
+                        map: child.material.map,
+                    });
+
                     child.castShadow = true;
                     child.receiveShadow = true;
                 }

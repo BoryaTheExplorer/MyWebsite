@@ -3,8 +3,8 @@ import Activity from "../Activity.js";
 
 
 class AboutMe extends Activity{
-    constructor(hex){
-        super(hex, 'About Me', './Models/Hex_PC_table_10_pose.glb', 'about-me');
+    constructor(loader, scene, hex){
+        super(loader, scene, hex, 'About Me', './Models/Hex_PC_table_10_pose.glb', 'about-me');
         this.aboutMeString = 'about-me';
     }
 

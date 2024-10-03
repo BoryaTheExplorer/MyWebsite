@@ -3,8 +3,8 @@ import Activity from "../Activity.js";
 
 
 class Skills extends Activity{
-    constructor(hex){
-        super(hex, 'Skills', './Models/Hex_Skills_Tile_No_Model.glb', 'skills')
+    constructor(loader, scene, hex){
+        super(loader, scene, hex, 'Skills', './Models/Hex_Skills_Tile_No_Model.glb', 'skills')
         this.skillListString = 'skill-list';
     }
 

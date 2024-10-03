@@ -3,8 +3,8 @@ import Activity from "../Activity.js"
 
 
 class Experience extends Activity{
-    constructor(hex){
-        super(hex, 'Experience', './Models/Placeholder.glb', 'experience')
+    constructor(loader, scene, hex){
+        super(loader, scene, hex, 'Experience', './Models/Hex_Experience_WIP.glb', 'experience')
         this.experienceListString = 'experience-list'
     }
 

@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { moveCube } from './cubeMovement.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import Hex from './Hex.js';
@@ -21,7 +20,6 @@ export let cameraBasePos;
 let previousTime = performance.now();
 let deltaTime;
 
-export let cube;
 export let renderer;
 export const activityLoader = new GLTFLoader();
 const loader = new GLTFLoader();
@@ -49,46 +47,43 @@ function init(){
         0.1,
         1000
     );
-    camera.setRotationFromEuler(new THREE.Euler(Math.PI * 1.75, 0, 0, "XYZ"));
+    
+    camera.position.set(10, 12, 26.5);
+    camera.setRotationFromEuler(new THREE.Euler(Math.PI * 1.85, 0, 0, "XYZ"));
 
     cameraModule = new CameraModule(camera);
-    camera.position.z = 26.5;
-    camera.position.x = 9;
-    camera.position.y = 10;
 
     cameraBasePos = new THREE.Vector3(0, 0, 0);
     cameraBasePos.copy(camera.position);
 
     renderer = new THREE.WebGLRenderer();
-    //renderer.setPixelRation(window.devicePixelRatio);
-    console.log(renderer);
+    renderer.shadowMap.enabled = true;
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     
     document.getElementById('scene-container').appendChild(renderer.domElement);
 
     grid.build(loader, scene);
-    
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({color: 0x88ff});
-    cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
 
-    const light = new THREE.DirectionalLight(0xffffff, 1.2);
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    const aLight = new THREE.AmbientLight(0xffffff, 0.25);
     
     light.position.set(0, 5, 5);
     light.target.position.set(0, 0, 0);
+    light.castShadow = true;
+    light.receiveShadow = true;
 
     scene.add(light.target);
     scene.add(light);
+    scene.add(aLight);
 
     animate();
 }
 
 function setActivities(){
-  //grid.setActivity(3, 3, 'About Me', './Models/Hex_PC_table_10_pose.glb');
-  grid.getTileFromIndex(3, 3).activity = new AboutMe(grid.getTileFromIndex(3, 3));
-  grid.getTileFromIndex(2, 5).activity = new Skills(grid.getTileFromIndex(2, 5));
-  grid.getTileFromIndex(4, 5).activity = new Experience(grid.getTileFromIndex(4, 5));
+  grid.getTileFromIndex(3, 3).activity = new AboutMe(loader, scene, grid.getTileFromIndex(3, 3));
+  grid.getTileFromIndex(2, 5).activity = new Skills(loader, scene, grid.getTileFromIndex(2, 5));
+  grid.getTileFromIndex(4, 5).activity = new Experience(loader, scene, grid.getTileFromIndex(4, 5));
 }
 function onMouseMove(event){
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;

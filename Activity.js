@@ -1,27 +1,33 @@
-import { activityLoader } from './main.js';
-import { scene } from './main.js';
+import * as THREE from 'three';
 
 class Activity{
-    constructor(hex, name, modelPath = null, uiElementName = null){
+    constructor(loader, scene, hex, name, modelPath = null, uiElementName = null){
         this.modelPath = modelPath;
         this.hex = hex;
         this.name = name;
         this.model;
+        this.loader = loader;
+        this.scene = scene;
         this.uiElementName = uiElementName;
         this.load(this.modelPath);
     }
 
     load(path){
-        activityLoader.load(
+        this.loader.load(
             path,
             (gltf) => {
                 const model = gltf.scene;
                 model.traverse((child) =>{
-                    if(child.isMesh)
-                    child.castShadow = true;
+                    if(child.isMesh){
+                        child.material = new THREE.MeshStandardMaterial({
+                            map: child.material.map,
+                        });
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+                    }
                 });
                 this.model = model.clone(true);
-                scene.add(this.model);
+                this.scene.add(this.model);
                 this.hex.model.add(this.model);
                 //this.model.position.copy(hex.model.position);
                 
