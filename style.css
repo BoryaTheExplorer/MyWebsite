@@ -44,7 +44,7 @@ html {
 #ui-card h2 {
     font-family: 'Roboto', sans-serif;
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1em;
     color:aliceblue
 }
 
@@ -224,6 +224,11 @@ html {
     font-family: 'Roboto', sans-serif;
     margin: 1% 0 0 0;
     padding-left: 2%;
-    font-size: 1rem;
+    font-size: 3rem;
     color: aliceblue;
+}
+@media (max-width: 410px){
+    #ui-card-header h2 {
+        font-size: 1rem;
+    }
 }

@@ -6,7 +6,6 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
 class OnlinePortfolio{
-    //Remake this bs. Just instantiate this stuff in the constructor
     constructor(){
         this.stateMachine;
         //Scene
@@ -103,7 +102,7 @@ class OnlinePortfolio{
 
     setActivities(){
         const grid = this.grid;
-        
+
         grid.getTileFromIndex(3, 3).activity = new AboutMe(loader, scene, grid.getTileFromIndex(3, 3));
         grid.getTileFromIndex(2, 5).activity = new Skills(loader, scene, grid.getTileFromIndex(2, 5));
         grid.getTileFromIndex(4, 5).activity = new Experience(loader, scene, grid.getTileFromIndex(4, 5));
