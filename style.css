@@ -84,14 +84,14 @@ html {
   transform: scaleX(100%); /* Default state, line is full width */
 }
 .skill-icon{
-    width: 48px;
-    height: 48px;
+    width: 2vw;
+    height: 2vw;
     flex-shrink: 0;
     margin-right: 0px;
 }
 .skill-text {
     font-family: 'Roboto', sans-serif;
-    font-size: 48px; 
+    font-size: 2vw; 
     color: aliceblue; 
     white-space: nowrap; 
     padding-left: 0px;
@@ -114,48 +114,50 @@ html {
     flex-direction: column;
 }
 .job-description::after{
-    content: ''; /* Pseudo-element with empty content */
+  content: '';
   position: absolute;
   left: 0%;
   right: 0;
   bottom: 0;
   height: 2px; /* Thickness of the line */
   background-color: aliceblue; /* Color of the line */
-  transform: scaleX(100%); /* Default state, line is full width */
+  width: 100% /* Default state, line is full width */
 }
 .job-place::after{
-    content: ''; /* Pseudo-element with empty content */
+  content: '';
   position: absolute;
-  left: 0%;
+  left: 0;
   right: 0;
   bottom: 0;
+  width: 200%;
   height: 2px; /* Thickness of the line */
-  background-color: aliceblue; /* Color of the line */
-  transform: scaleX(100%); /* Default state, line is full width */
+  background-color: aliceblue; /* Color of the line *//
 }
 .job-title{
     font-family: 'Roboto', sans-serif;
-    font-size: 48px; 
+    font-size: 2.5vw; 
     color: aliceblue; 
     white-space: nowrap; 
-    padding-left: 10px;
+    padding-left: 1vw;
     text-overflow: ellipsis;
+    width: 100%;
 }
 .job-place{
     font-family: 'Roboto', sans-serif;
-    font-size: 18px; 
+    font-size: 1vw; 
     color: aliceblue; 
     white-space: nowrap; 
-    padding-left: 10px;
+    padding-left: 1vw;
+    width: 100%;
     text-overflow: ellipsis;
     position: relative;
 }
 .job-description{
     font-family: 'Roboto', sans-serif;
-    font-size: 14px; 
+    font-size: 0.75vw; 
     color: aliceblue; 
-    padding-left: 10px;
-    width: 230%;
+    padding-left: 1vw;
+    width: 210%;
 
     position: relative;
 }
@@ -163,7 +165,7 @@ html {
 
 .about-me{
     font-family: 'Roboto', sans-serif;
-    font-size: 24px; 
+    font-size: 2vw; 
     color: aliceblue; 
     padding-left: 10px;
     width: 100%;
