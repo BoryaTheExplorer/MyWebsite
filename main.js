@@ -57,6 +57,7 @@ function init(){
 
     renderer = new THREE.WebGLRenderer();
     renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFShadowMap;
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     
@@ -67,11 +68,28 @@ function init(){
     const light = new THREE.DirectionalLight(0xffffff, 1);
     const aLight = new THREE.AmbientLight(0xffffff, 0.25);
     
-    light.position.set(0, 5, 5);
+    light.position.set(-30, 100, 50);
     light.target.position.set(0, 0, 0);
     light.castShadow = true;
     light.receiveShadow = true;
 
+    light.castShadow = true
+
+    light.shadow.mapSize.width = 1024;
+    light.shadow.mapSize.height = 1024;
+    light.shadow.camera.near = 0.5
+    light.shadow.camera.far = 150
+
+    light.shadow.camera.left = -25;  // Adjust these values based on your scene's scale
+    light.shadow.camera.right = 25;
+    light.shadow.camera.top = 25;
+    light.shadow.camera.bottom = -25;
+
+    light.shadow.mapType = THREE.PCFSoftShadowMap;
+    light.shadow.bias = -0.001;
+
+    const helper = new THREE.CameraHelper(light.shadow.camera)
+    scene.add(helper)
     scene.add(light.target);
     scene.add(light);
     scene.add(aLight);

@@ -80,10 +80,13 @@ class Grid{
             const model = gltf.scene;
             model.traverse((child) => {
                 if(child.isMesh){
-                    child.material = new THREE.MeshStandardMaterial({
+                    child.material = new THREE.MeshPhysicalMaterial({
                         map: child.material.map,
+                        side: THREE.DoubleSide,
                     });
 
+                    child.geometry.computeVertexNormals();
+                    child.material.shadowSide = THREE.DoubleSide;
                     child.castShadow = true;
                     child.receiveShadow = true;
                 }
