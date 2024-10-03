@@ -4,9 +4,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import Hex from './Hex.js';
 import Grid from './Grid.js';
 import CameraModule from './TODO/CameraModule.js';
-import TestFrameworks from './Activities/TestFrameworks.js';
-import Experience from './Activities/Experience.js';
-import AboutMe from './Activities/AboutMe.js';
+
+import Activities from './Activities/ActivityImport.js';
 
 const uiCard = document.getElementById('ui-card');
 const uiCardHeader = document.getElementById('ui-card-header');
@@ -81,9 +80,12 @@ function init(){
 }
 
 function setActivities(){
-  grid.getTileFromIndex(3, 3).activity = new AboutMe(loader, scene, grid.getTileFromIndex(3, 3));
-  grid.getTileFromIndex(2, 5).activity = new TestFrameworks(loader, scene, grid.getTileFromIndex(2, 5));
-  grid.getTileFromIndex(4, 5).activity = new Experience(loader, scene, grid.getTileFromIndex(4, 5));
+  grid.getTileFromIndex(3, 3).activity = new Activities.AboutMe(loader, scene, grid.getTileFromIndex(3, 3));
+  grid.getTileFromIndex(2, 4).activity = new Activities.ProgLanguages(loader, scene, grid.getTileFromIndex(2, 4));
+  grid.getTileFromIndex(2, 5).activity = new Activities.TestFrameworks(loader, scene, grid.getTileFromIndex(2, 5));
+
+  grid.getTileFromIndex(5, 2).activity = new Activities.Fitness(loader, scene, grid.getTileFromIndex(5, 2));
+  grid.getTileFromIndex(4, 5).activity = new Activities.Experience(loader, scene, grid.getTileFromIndex(4, 5));
 }
 function onMouseMove(event){
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
