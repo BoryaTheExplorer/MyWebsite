@@ -75,12 +75,12 @@ function init(){
 
     light.castShadow = true
 
-    light.shadow.mapSize.width = 1024;
-    light.shadow.mapSize.height = 1024;
+    light.shadow.mapSize.width = 2048;
+    light.shadow.mapSize.height = 2048;
     light.shadow.camera.near = 0.5
     light.shadow.camera.far = 150
 
-    light.shadow.camera.left = -25;  // Adjust these values based on your scene's scale
+    light.shadow.camera.left = -25; 
     light.shadow.camera.right = 25;
     light.shadow.camera.top = 25;
     light.shadow.camera.bottom = -25;
@@ -88,8 +88,8 @@ function init(){
     light.shadow.mapType = THREE.PCFSoftShadowMap;
     light.shadow.bias = -0.001;
 
-    const helper = new THREE.CameraHelper(light.shadow.camera)
-    scene.add(helper)
+    //const helper = new THREE.CameraHelper(light.shadow.camera)
+    //scene.add(helper)
     scene.add(light.target);
     scene.add(light);
     scene.add(aLight);

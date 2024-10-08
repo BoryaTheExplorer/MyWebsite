@@ -4,7 +4,7 @@ import Activity from "../Activity.js";
 
 class TestFrameworks extends Activity{
     constructor(loader, scene, hex){
-        super(loader, scene, hex, 'Testing Frameworks', './Models/Hex_Skills_Tile_No_Model.glb', 'skills')
+        super(loader, scene, hex, 'Testing Frameworks', './Models/Hex_TestFrameworks.glb', 'skills')
         this.skillListString = 'skill-list';
     }
 

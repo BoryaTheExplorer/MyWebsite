@@ -21,11 +21,11 @@ class Activity{
                     if(child.isMesh){
                         child.material = new THREE.MeshPhysicalMaterial({
                             map: child.material.map,
-                            side: THREE.DoubleSide,
+                            side: THREE.FrontSide,
                         });
 
                         child.geometry.computeVertexNormals();
-                        child.material.shadowSide = THREE.DoubleSide;
+                        child.material.shadowSide = THREE.BackSide;
                         child.castShadow = true;
                         child.receiveShadow = true;
                     }
