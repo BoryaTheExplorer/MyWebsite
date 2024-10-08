@@ -16,12 +16,13 @@ html {
 /* Card Styling */
 #ui-card {
     position: absolute; /* Place card on top of 3D scene */
-    bottom: 0%;
+    bottom: 5%;
     left: 5%;
     width: 35%;
     height: 70%;
-    padding: 1vw;
-    background-color: rgba(43, 65, 83, 0.6);
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 
@@ -213,8 +214,9 @@ html {
     left: 5%;
     width: 35%;
     height: 10%;
-    padding: 20px;
-    background-color: rgb(43, 65, 83, 0.6);
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
     z-index: 1000; /* Ensure it appears above the 3D scene */
 
     opacity: 0;
@@ -233,3 +235,17 @@ html {
         font-size: 3vw;
     }
 }
+.hud {
+    position: absolute; 
+    bottom: 5%; 
+    right: 5%; 
+    color: white;
+    font-size: 1vw; 
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5%; 
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .hud strong {
+    color: yellow;
+  }
