@@ -33,7 +33,6 @@ class Activity{
                 this.model = model.clone(true);
                 this.scene.add(this.model);
                 this.hex.model.add(this.model);
-                //this.model.position.copy(hex.model.position);
                 
             },
             function (xhr) {
