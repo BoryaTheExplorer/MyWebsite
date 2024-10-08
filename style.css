@@ -177,7 +177,7 @@ html {
 
 #ui-card button{
     padding: 2% 30%;
-    position: relative;
+    position: absolute;
     bottom: 5%;
     left: 17.5%;
 
