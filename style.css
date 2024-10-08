@@ -178,12 +178,12 @@ html {
 #ui-card button{
     padding: 2% 30%;
     position: relative;
-    top: 90%;
+    bottom: 5%;
     left: 17.5%;
 
     background-color: transparent; 
     border: none; 
-    font-size: 18px; 
+    font-size: 1vw; 
     font-family: 'Roboto', sans-serif;
     color: aliceblue;
     cursor: pointer; 
