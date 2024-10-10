@@ -7,9 +7,7 @@ import CameraModule from './TODO/CameraModule.js';
 
 import Activities from './Activities/ActivityImport.js';
 
-const uiCard = document.getElementById('ui-card');
 const uiCardHeader = document.getElementById('ui-card-header');
-const uiCloseButton = document.getElementById('button-close');
 const MODEL_LOADED_EVENT = 'modelLoaded';
 
 export let scene;
@@ -102,8 +100,9 @@ function setActivities(){
   grid.getTileFromIndex(2, 4).activity = new Activities.ProgLanguages(loader, scene, grid.getTileFromIndex(2, 4));
   grid.getTileFromIndex(2, 5).activity = new Activities.TestFrameworks(loader, scene, grid.getTileFromIndex(2, 5));
 
-  grid.getTileFromIndex(5, 2).activity = new Activities.Fitness(loader, scene, grid.getTileFromIndex(5, 2));
+  //grid.getTileFromIndex(5, 2).activity = new Activities.Fitness(loader, scene, grid.getTileFromIndex(5, 2));
   grid.getTileFromIndex(4, 5).activity = new Activities.Experience(loader, scene, grid.getTileFromIndex(4, 5));
+  grid.getTileFromIndex(1, 5).activity = new Activities.Software(loader, scene, grid.getTileFromIndex(1, 5));
 }
 function onMouseMove(event){
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -111,29 +110,28 @@ function onMouseMove(event){
 }
 
 function openUI(){
-  uiCard.classList.remove('hidden');
-  uiCard.classList.add('visible');
-
-  uiCardHeader.classList.remove('hidden');
-  uiCardHeader.classList.add('visible');
-
   selectedTile.activity.showUI();
 }
 function hideUI(){
-  uiCard.classList.remove('visible');
-  uiCard.classList.add('hidden');
-
-  uiCardHeader.classList.remove('visible');
-  uiCardHeader.classList.add('hidden');
+  let h2Element = document.querySelector('#ui-card-header h2');
+  h2Element.textContent = 'Select a Tile';
 
   selectedTile.activity.hideUI();
 }
 
 function onClick(event){
-  const isUIVisible = uiCard.classList.contains('visible');
-  const isOverUI = event.target.closest('#ui-card-header') != null || event.target.closest('#ui-card') != null;
 
-  if(isUIVisible && isOverUI) return;
+  if(selectedTile != null && selectedTile != undefined){
+    const currentUI = document.getElementById(selectedTile.activity.uiElementName);
+    
+    const isUIVisible = !currentUI.classList.contains('hidden');
+    const isOverUI = event.target.closest('#ui-card-header') != null || event.target.closest('#' + selectedTile.activity.uiElementName) != null;
+
+    if(isUIVisible && isOverUI) return;
+  }
+  
+
+  
 
   raycaster.setFromCamera(mouse, camera);
 
@@ -222,14 +220,7 @@ function moveCamera() {
 
 window.addEventListener('mousemove', onMouseMove, false);
 window.addEventListener('click', onClick, false);
-uiCloseButton.addEventListener('click', function(event){
-  event.stopPropagation();
 
-  hideUI();
-
-  selectedTile.deselect();
-  selectedTile = null;
-});
 window.addEventListener('resize', () =>{
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;

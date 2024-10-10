@@ -4,8 +4,8 @@ import Activity from "../Activity.js"
 
 class Experience extends Activity{
     constructor(loader, scene, hex){
-        super(loader, scene, hex, 'Experience', './Models/Hex_Experience_WIP.glb', 'experience')
-        this.experienceListString = 'experience-list'
+        super(loader, scene, hex, 'Experience', './Models/Hex_Experience_WIP.glb', 'job-card')
+        this.experienceListString = 'experience'
     }
 
     showUI(){

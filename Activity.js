@@ -19,7 +19,7 @@ class Activity{
                 const model = gltf.scene;
                 model.traverse((child) =>{
                     if(child.isMesh){
-                        child.material = new THREE.MeshPhysicalMaterial({
+                        child.material = new THREE.MeshStandardMaterial({
                             map: child.material.map,
                             side: THREE.FrontSide,
                         });

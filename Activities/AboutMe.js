@@ -4,7 +4,7 @@ import Activity from "../Activity.js";
 
 class AboutMe extends Activity{
     constructor(loader, scene, hex){
-        super(loader, scene, hex, 'About Me', './Models/Hex_PC_table_10_pose.glb', 'about-me');
+        super(loader, scene, hex, 'About Me', './Models/Hex_PC_table_10_pose.glb', 'about-me-card');
         this.aboutMeString = 'about-me';
     }
 

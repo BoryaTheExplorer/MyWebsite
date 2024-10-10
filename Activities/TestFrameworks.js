@@ -4,26 +4,20 @@ import Activity from "../Activity.js";
 
 class TestFrameworks extends Activity{
     constructor(loader, scene, hex){
-        super(loader, scene, hex, 'Testing Frameworks', './Models/Hex_TestFrameworks.glb', 'skills')
-        this.skillListString = 'skill-list';
+        super(loader, scene, hex, 'Testing Frameworks', './Models/Hex_TestFrameworks.glb', 'testing-frameworks-card')
+        this.testingFrameworksString = 'testing-frameworks';
     }
 
     showUI(){
         const uiElement = document.getElementById(this.uiElementName);
 
         uiElement.classList.remove('hidden');
-        uiElement.classList.add(this.skillListString);
-
-
-        const newUIElement = document.getElementById('experience');
-        console.log(newUIElement.classList);
+        uiElement.classList.add(this.testingFrameworksString);
     }
     hideUI(){
-        console.log('HIDING SKILLS SPECIFIC UI');
-
         const uiElement = document.getElementById(this.uiElementName);
 
-        uiElement.classList.remove(this.skillListString);
+        uiElement.classList.remove(this.testingFrameworksString);
         uiElement.classList.add('hidden');
     }
 }

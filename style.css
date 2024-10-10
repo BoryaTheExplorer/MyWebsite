@@ -1,6 +1,6 @@
 html {
   font-size: 16px;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -13,9 +13,10 @@ html {
     overflow: hidden;
 }
 
-/* Card Styling */
+
+
 #ui-card {
-    position: absolute; /* Place card on top of 3D scene */
+    position: absolute; 
     bottom: 5%;
     left: 5%;
     width: 35%;
@@ -28,82 +29,39 @@ html {
 
     display: flex;
 
+    overflow: hidden;
     opacity: 0;
     transition: opacity 0.25s ease-in-out;
 }
 
 .hidden {
+    overflow: hidden;
+
     opacity: 0 !important;
     pointer-events: none;
 }
-
 .visible {
+    overflow: hidden;
     opacity: 1 !important;
     pointer-events: auto;
 }
 
-#ui-card h2 {
-    font-family: 'Roboto', sans-serif;
-    margin-top: 0;
-    font-size: 1em;
-    color:aliceblue
-}
-
-#ui-card p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: aliceblue
-}
-
-
-.skill-list{
+.experience{
     position: absolute;
-    list-style: none;
-    padding: 0;
-    margin:0;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 93%;
-}
-.skill-item{
+
+    top: 4%;
+    left: 5%;
+
+    width: 30%;
+
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /*border: 1px solid aliceblue;
-    border-radius: 5px;*/
-    width: 100% !important;
-    position: relative;
-}
-.skill-item::after{
-    content: ''; /* Pseudo-element with empty content */
-  position: absolute;
-  left: 0%;
-  right: 0;
-  bottom: 0;
-  height: 2px; /* Thickness of the line */
-  background-color: aliceblue; /* Color of the line */
-  transform: scaleX(100%); /* Default state, line is full width */
-}
-.skill-icon{
-    width: 2vw;
-    height: 2vw;
-    flex-shrink: 0;
-    margin-right: 0px;
-}
-.skill-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2vw; 
-    color: aliceblue; 
-    white-space: nowrap; 
-    padding-left: 0px;
-    text-overflow: ellipsis;
-}
+    transition: opacity 0.25s ease-in-out;
 
-
-
+    overflow: hidden;
+    z-index: 1000;
+}
 .experience-list{
     position: relative;
-    margin-top: -2%;
     padding: 0%;
     width: 100%;
     list-style: none;
@@ -113,128 +71,273 @@ html {
     align-items: left;
     position: relative;
     flex-direction: column;
-}
-.job-description::after{
-  content: '';
-  position: absolute;
-  left: 0%;
-  right: 0;
-  bottom: 0;
-  height: 2px; /* Thickness of the line */
-  background-color: aliceblue; /* Color of the line */
-  width: 100% /* Default state, line is full width */
-}
-.job-place::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 180%;
-  height: 2px; /* Thickness of the line */
-  background-color: aliceblue; /* Color of the line *//
+
+    height: 7vw;
+    padding-left: 1vw;
+
+    margin-bottom: 5%;
+
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .job-title{
     font-family: 'Roboto', sans-serif;
     font-size: 2.5vw; 
     color: aliceblue; 
+
     white-space: nowrap; 
-    padding-left: 1vw;
     text-overflow: ellipsis;
+
+    top: 1%;
+
     width: 100%;
 }
 .job-place{
     font-family: 'Roboto', sans-serif;
     font-size: 1vw; 
     color: aliceblue; 
+
     white-space: nowrap; 
-    padding-left: 1vw;
-    width: 100%;
     text-overflow: ellipsis;
+    width: 100%;
+
+    margin-top: 0%;
+    bottom: -10%;
     position: relative;
 }
-.job-description{
+.job-years{
     font-family: 'Roboto', sans-serif;
-    font-size: 0.75vw; 
-    color: aliceblue; 
-    padding-left: 1vw;
-    width: 185%;
+    color: aliceblue;
+    font-size: 1vw;
 
+    margin-top: 0%;
+    bottom: -10%;
     position: relative;
+}
+.job-logo{
+    position: absolute;
+    height: 90%;
+    top: 5%;
+    right: 1%;
+    
 }
 
 
-.about-me{
+.prog-langs{
+    position: absolute;
+
+    top: 4%;
+    left:5%;
+
+    height: auto;
+    max-height: 100%;
+    width: 21%;
+
+    display: flex;
+    transition: opacity 0.25s ease-in-out;
+
+    overflow: hidden;
+    z-index: 1000;
+}
+.prog-langs-list{
+    position: relative;
+    padding: 0%;
+    width: 100%;
+    list-style: none;
+}
+.prog-langs-item{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    flex-direction: column;
+
+    height: 25%;
+
+    margin-bottom: 5%;
+
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.prog-lang-name{
     font-family: 'Roboto', sans-serif;
     font-size: 2vw; 
     color: aliceblue; 
-    padding-left: 10px;
-    width: 100%;
 
+    text-align: center;
+    bottom: 0%;
+}
+.prog-lang-logo{
+    height: 60%;
+    margin-top: 0%;
+}
+
+
+.testing-frameworks{
     position: absolute;
-}
 
+    top: 4%;
+    left:5%;
 
-#ui-card button{
-    padding: 2% 30%;
-    position: absolute;
-    bottom: 5%;
-    left: 17.5%;
+    height: auto;
+    max-height: 100%;
+    width: 21%;
 
-    background-color: transparent; 
-    border: none; 
-    font-size: 1vw; 
-    font-family: 'Roboto', sans-serif;
-    color: aliceblue;
-    cursor: pointer; 
-    outline: none; 
-
-    position: absolute;
-}
-#ui-card button::after{
-    content: ''; /* Pseudo-element with empty content */
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0; /* Align the line to the bottom */
-  height: 2px; /* Thickness of the line */
-  background-color: aliceblue; /* Color of the line */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
-}
-#ui-card button:hover::after{
-    transform: scaleX(1.2); /* Slightly increase the width on hover */
-}
-#ui-card button:hover{
-    color: rgba(240, 248, 255, 0.699); /* Change text color on hover */
-}
-
-#ui-card-header {
-    position: absolute; /* Place card on top of 3D scene */
-    top: 5%;
-    left: 5%;
-    width: 35%;
-    height: 10%;
-    padding: 1%;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    z-index: 1000; /* Ensure it appears above the 3D scene */
-
-    opacity: 0;
+    display: flex;
     transition: opacity 0.25s ease-in-out;
+
+    overflow: hidden;
+    z-index: 1000;
+}
+.testing-frameworks-list{
+    position: relative;
+    padding: 0%;
+    width: 100%;
+    list-style: none;
+}
+.testing-frameworks-item{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    flex-direction: column;
+
+    height: 21%;
+
+    margin-bottom: 5%;
+
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.testing-framework-name{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw; 
+    color: aliceblue; 
+
+    text-align: center;
+    bottom: 0%;
+}
+.testing-framework-logo{
+    height: 60%;
+    margin-top: 0%;
 }
 
-#ui-card-header h2 {
+
+
+
+.software{
+    position: absolute;
+
+    top: 4%;
+    left:5%;
+
+    height: auto;
+    max-height: 100%;
+    width: 21%;
+
+    display: flex;
+    transition: opacity 0.25s ease-in-out;
+
+    overflow: hidden;
+    z-index: 1000;
+}
+.software-list{
+    position: relative;
+    padding: 0%;
+    width: 100%;
+    list-style: none;
+}
+.software-item{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    flex-direction: column;
+
+    height: 21%;
+
+    margin-bottom: 5%;
+
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.software-name{
     font-family: 'Roboto', sans-serif;
-    margin: 1% 0 0 0;
-    padding-left: 2%;
-    font-size: 3rem;
-    color: aliceblue;
+    font-size: 2vw; 
+    color: aliceblue; 
+
+    text-align: center;
+    bottom: 0%;
 }
-@media (orientation: landscape) and (min-width: 720px) and (max-width: 2400px){
-    #ui-card-header h2 {
-        font-size: 3vw;
-    }
+.software-logo{
+    height: 60%;
+    margin-top: 0%;
 }
+
+
+
+.about-me{
+    display: flex;
+
+    align-items: left;
+    justify-content: center;
+    
+    position: absolute;
+    flex-direction: column;
+
+    left: 5%;
+    height: 90%;
+    width: 35%;
+
+    top: 5%;
+
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+.about-me-name{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw; 
+    color: aliceblue; 
+
+    margin-bottom: 5%;
+    
+    padding-left: 5%;
+    text-align: left;
+}
+.about-me-roles{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vw; 
+    color: aliceblue; 
+
+    position: relative;
+    top:-5%;
+    padding-left: 5%;
+    text-align: left;
+}
+.about-me-description{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw; 
+    color: aliceblue; 
+
+    margin-bottom: 5%;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: left;
+}
+.about-me-image{
+    align-self: center;
+    height: 70%;
+    border-radius: 10px;    
+}
+
 .hud {
     position: absolute; 
     bottom: 5%; 
@@ -245,7 +348,48 @@ html {
     padding: 1.5%; 
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
+
+    overflow: hidden;
+    z-index: 1000;
   }
   .hud strong {
     color: yellow;
   }
+
+
+
+
+
+
+
+
+
+#ui-card-header {
+    position: absolute; /* Place card on top of 3D scene */
+    top: 5%;
+    right: 5%;
+    width: 35%;
+    height: 10%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    z-index: 1000; /* Ensure it appears above the 3D scene */
+
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+#ui-card-header h2 {
+    font-family: 'Roboto', sans-serif;
+    margin: 1% 0 0 0;
+    padding-left: 2%;
+    padding-top: 1%;
+    font-size: 3vw;
+    color: aliceblue;
+}
+@media (orientation: landscape) and (min-width: 720px) and (max-width: 2400px){
+    #ui-card-header h2 {
+        font-size: 3vw;
+    }
+}

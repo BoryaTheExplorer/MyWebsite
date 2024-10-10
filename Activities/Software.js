@@ -2,28 +2,24 @@ import Activity from "../Activity.js";
 
 
 
-class ProgLanguages extends Activity{
+class Software extends Activity{
     constructor(loader, scene, hex){
-        super(loader, scene, hex, 'Programming Languages', './Models/Hex_Prog_Lang.glb', 'prog-langs-card');
-        this.progLanguagesString = 'prog-langs';
+        super(loader, scene, hex, "Software", './Models/Placeholder.glb', 'software-card');
+        this.softwareString = 'software';
     }
 
     showUI(){
         const uiElement = document.getElementById(this.uiElementName);
-    
+
         uiElement.classList.remove('hidden');
-        uiElement.classList.add(this.progLanguagesString);
+        uiElement.classList.add(this.softwareString);
     }
     hideUI(){
         const uiElement = document.getElementById(this.uiElementName);
 
-        uiElement.classList.remove(this.progLanguagesString);
+        uiElement.classList.remove(this.softwareString);
         uiElement.classList.add('hidden');
     }
 }
 
-
-
-
-
-export default ProgLanguages;
+export default Software;

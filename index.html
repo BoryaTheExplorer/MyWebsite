@@ -16,8 +16,8 @@
     <div id="app"></div>
     
     <div id="scene-container"></div>
-    <div id="ui-card-header" class="hidden">
-      <h2>Card Title</h2>
+    <div id="ui-card-header" class="visible">
+      <h2>Select a Tile</h2>
     </div>
     <div class="hud">
       <p>Use <strong>W</strong> to move forward</p>
@@ -25,69 +25,93 @@
       <p>Use <strong>S</strong> to move backward</p>
       <p>Use <strong>D</strong> to move right</p>
     </div>
-    <div id="ui-card" class="hidden">
 
-      <ul id="experience" class="hidden">
+
+    <div id="job-card" class="hidden">
+      <ul class="experience-list">
         <li class="experience-item">
           <span class="job-title">Tester</span>
-          <span class="job-place">Ubisoft Ukraine 2021-2023</span>
-          <span class="job-description">Improved Product Quality: 
-            <br>● Enhanced product stability and user experience by identifying and resolving over 200 critical bugs and issues.
-            <br>● Streamlined Communication: Facilitated efficient problem resolution by clearly
-            communicating issues to developers, resulting in a 10% reduction in issue resolution
-            time.
-            <br>● Comprehensive Testing: Developed detailed test plans and executed thorough
-            testing procedures, ensuring all game aspects were rigorously tested and met
-            high-quality standards.
-            <br>● Effective Documentation: Created and maintained organized documentation,
-            improving team coordination and project tracking, leading to a 20% increase in
-            project efficiency</span>
+          <span class="job-years">2021-2023</span>
+          <span class="job-place">Ubisoft Ukraine</span>
+          <img src="./Images/Ubisoft_Icon.webp" alt="Ubisoft Icon" class="job-logo">
+        </li>
+        <li class="experience-item">
+          <span class="job-title">Room for new Adventures</span>
         </li>
       </ul>
-
-      <ul id="skills" class="hidden">
-        <li class="skill-item">
-          <span class="skill-text">C#</span>
-          <img src="./Images/csharp_icon.png" alt="Skill 1 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">Unity</span>
-          <img src="./Images/Unity_Icon.png" alt="Skill 2 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">Java</span>
-          <img src="./Images/Java_Icon.png" alt="Skill 3 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">xUnit</span>
-          <img src="./Images/xUnit_icon.png" alt="Skill 3 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">NUnit</span>
-          <img src="./Images/NUnit_icon.png" alt="Skill 3 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">JUnit</span>
-          <img src="./Images/JUnit_Icon.png" alt="Skill 3 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">Cucumber</span>
-          <img src="./Images/Cucumber_Icon.svg" alt="Skill 3 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">Jira</span>
-          <img src="./Images/Jira_Icon.png" alt="Skill 3 Icon" class="skill-icon">
-        </li>
-        <li class="skill-item">
-          <span class="skill-text">Git</span>
-          <img src="./Images/Git_Icon.png" alt="Skill 3 Icon" class="skill-icon">
-        </li>
-      </ul>
-
-      <span id="about-me" class="hidden">Placeholder Text</span>
-
-      <button id="button-close">Close</button>
     </div>
+
+
+    <div id="prog-langs-card" class="hidden">
+      <ul class="prog-langs-list">
+        <li class="prog-langs-item">
+          <img src="./Images/csharp_icon.png" alt="CSharp Logo" class="prog-lang-logo">
+          <span class="prog-lang-name">C#</span>
+        </li>
+        <li class="prog-langs-item">
+          <img src="./Images/Java_Icon.png" alt="Java Logo" class="prog-lang-logo">
+          <span class="prog-lang-name">Java</span>
+        </li>
+        <li class="prog-langs-item">
+          <img src="./Images/HLSL_Icon.svg" alt="HLSL Logo" class="prog-lang-logo">
+          <span class="prog-lang-name">HLSL</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <div id="testing-frameworks-card" class="hidden">
+      <ul class="testing-frameworks-list">
+        <li class="testing-frameworks-item">
+          <img src="./Images/JUnit_Icon.png" alt="JUnit Logo" class="testing-framework-logo">
+          <span class="testing-framework-name">JUnit</span>
+        </li>
+        <li class="testing-frameworks-item">
+          <img src="./Images/Cucumber_Icon.svg" alt="Cucumber & Gherkin Logo" class="testing-framework-logo">
+          <span class="testing-framework-name">Cucumber & Gherkin</span>
+        </li>
+        <li class="testing-frameworks-item">
+          <img src="./Images/xUnit_icon.png" alt="xUnit Logo" class="testing-framework-logo">
+          <span class="testing-framework-name">xUnit</span>
+        </li>
+        <li class="testing-frameworks-item">
+          <img src="./Images/NUnit_icon.png" alt="NUnit Logo" class="testing-framework-logo">
+          <span class="testing-framework-name">NUnit</span>
+        </li>
+      </ul>
+    </div>
+
+
+    <div id="software-card" class ="hidden">
+      <ul class="software-list">
+        <li class ="software-item">
+          <img src="./Images/Unity_Icon.png" alt="Unity Logo" class="software-logo">
+          <span class="software-name">Unity</span>
+        </li>
+        <li class="software-item">
+          <img src="./Images/Jira_Icon.png" alt="Jira Logo" class="software-logo">
+          <span class="software-name">Jira</span>
+        </li>
+        <li class="software-item">
+          <img src="./Images/Git_Icon.png" alt="Git Logo" class="software-logo">
+          <span class="software-name">Git</span>
+        </li>
+        <li class="software-item">
+          <img src="./Images/Blender_Icon.png" alt="Blender Logo" class="software-logo">
+          <span class="software-name">Blender</span>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div id="about-me-card" class="hidden">
+      <span class="about-me-name">Borys Feldsher</span>
+      <span class="about-me-roles">•Software Testing and Game Development</span>
+      <span class="about-me-description">Passionate about continuous improvement, teamwork, and with interests in fitness, role-playing games, and game development.</span>
+      <img src="./Images/Portrait_Placeholder.png" alt="Portrait Placeholder" class="about-me-image">
+    </div>
+
     <script type="importmap">
       {
         "imports": {
