@@ -86,8 +86,6 @@ function init(){
     light.shadow.mapType = THREE.PCFSoftShadowMap;
     light.shadow.bias = -0.001;
 
-    //const helper = new THREE.CameraHelper(light.shadow.camera)
-    //scene.add(helper)
     scene.add(light.target);
     scene.add(light);
     scene.add(aLight);
