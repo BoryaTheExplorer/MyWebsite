@@ -98,7 +98,7 @@ function setActivities(){
   grid.getTileFromIndex(2, 4).activity = new Activities.ProgLanguages(loader, scene, grid.getTileFromIndex(2, 4));
   grid.getTileFromIndex(2, 5).activity = new Activities.TestFrameworks(loader, scene, grid.getTileFromIndex(2, 5));
 
-  //grid.getTileFromIndex(5, 2).activity = new Activities.Fitness(loader, scene, grid.getTileFromIndex(5, 2));
+  grid.getTileFromIndex(5, 2).activity = new Activities.BankingGame(loader, scene, grid.getTileFromIndex(5, 2));
   grid.getTileFromIndex(4, 5).activity = new Activities.Experience(loader, scene, grid.getTileFromIndex(4, 5));
   grid.getTileFromIndex(1, 5).activity = new Activities.Software(loader, scene, grid.getTileFromIndex(1, 5));
 }

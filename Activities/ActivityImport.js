@@ -4,6 +4,7 @@ import Fitness from './Fitness.js';
 import ProgLanguages from './ProgLanguages.js';
 import TestFrameworks from './TestFrameworks.js';
 import Software from './Software.js';
+import BankingGame from './BankingGame.js';
 
 const Activities = {
     AboutMe,
@@ -12,6 +13,7 @@ const Activities = {
     ProgLanguages,
     TestFrameworks,
     Software,
+    BankingGame,
 };
 
 export default Activities;
